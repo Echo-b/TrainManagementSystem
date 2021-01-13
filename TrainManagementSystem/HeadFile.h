@@ -9,6 +9,15 @@
 #include <conio.h>
 #include <time.h>
 
+//此处给出define定义
+#define TRUE 1
+#define FALSE 0
+#define OK  1
+#define ERROR  0
+#define OVERFLOW -2
+#define MAXLENGTH 100//乘客与火车数组最大长度
+
+
 //此处给typedef的定义
 typedef char Train_Name_Type[20];
 typedef char Name_Type[20];
@@ -16,6 +25,7 @@ typedef char Place_Name_Type[20];
 typedef char Phone_Number_Type[20];
 typedef char ID[30];
 typedef char Order_Number_Type[30];
+typedef int Status;
 
 //此处定义结构体（注意结构体的顺序）（不要前面定义的用到后面才定义的）
 /*******************************************************************/
@@ -79,7 +89,7 @@ typedef struct train_information
     SeatNumberType seat;             //不同等级的座位号的数量
     PStopStation first_stop_station; //链接停靠站
     PStopStation frist_passenger;
-};
+}train_information,*PtrainInf;
 /*******************************************************************/
 
 //车票
@@ -100,8 +110,13 @@ typedef struct ticket_information
     float cost;      //票价
 } Book;
 /********************************************************************/
+//乘客表数据类型
+typedef struct {
+    Ppassenger passengers;//此处放所有乘客的数据
+    int num_of_passenger;//乘客人数
+}PassengerTableType;
 //此处再次给typedef定义（写明每个结构体的变量作用）
 
-//此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数下方写）（不写打死你）
-
-//
+//此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数上方写）（不写打死你）
+//函数返回输入的两个时间差，前者为开始时间，后者为结束时间，返回类型为我们定义的时间类型，未对参数进行改变
+TimeType get_time_difference(TimeType start_time, TimeType end_time);
