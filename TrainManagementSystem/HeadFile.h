@@ -149,7 +149,9 @@ Status train_read_file(TrainTableType& train_table, const char* file_name);
 //此函数是简单地初始化火车表，参数为火车表的结构体
 //返回值：int类型，当为OK时初始化成功，当为OVERFLOW时初始化失败
 Status init_train_table(TrainTableType train_table);
-//此函数用于显示初始界面，暂无返回值和参数
-void LoadingFunction();
-void RegisterFunction();
+//此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数下方写）（不写打死你）
 void welcoming();
+//此函数是欢迎函数，不需要参数，无返回值
+float calculate_money(Place_Name_Type buy_startsta, Place_Name_Type buy_endsta, wchar_t* buy_seat, Train_Name_Type choose_train);
+//此文件是用于计算高铁的票价，参数是乘客的四个输入，起始站，终到站，座位类型以及车次
+//返回一个浮点数，对传入的参数不做改动
