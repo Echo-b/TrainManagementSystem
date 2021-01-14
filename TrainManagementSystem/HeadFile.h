@@ -12,11 +12,10 @@
 //此处给出define定义
 #define TRUE 1
 #define FALSE 0
-#define OK  1
-#define ERROR  0
+#define OK 1
+#define ERROR 0
 #define OVERFLOW -2
-#define MAXLENGTH 100//乘客与火车数组最大长度
-
+#define MAXLENGTH 100 //乘客与火车数组最大长度
 
 //此处给typedef的定义
 typedef char Train_Name_Type[20];
@@ -26,7 +25,6 @@ typedef char Phone_Number_Type[20];
 typedef char ID[30];
 typedef char Order_Number_Type[30];
 typedef int Status;
-
 //此处定义结构体（注意结构体的顺序）（不要前面定义的用到后面才定义的）
 /*******************************************************************/
 //时间结构体，存储时间用于计算进出站总时间
@@ -89,7 +87,12 @@ typedef struct train_information
     SeatNumberType seat;             //不同等级的座位号的数量
     PStopStation first_stop_station; //链接停靠站
     PStopStation frist_passenger;
-}train_information,*PtrainInf;
+} train_information, *PtrainInf;
+typedef struct train_node
+{
+    train_information Data;
+    struct train_node *next;
+} * TrainLink;
 /*******************************************************************/
 
 //车票
@@ -114,12 +117,14 @@ typedef struct ticket_information
 typedef struct {
     Ppassenger passengers;//此处放所有乘客的数据
     int num_of_passenger;//乘客人数
+    int size;//当前表大小
 }PassengerTableType;
 /*******************************************************************/
 //火车表结构体
 typedef struct {
     PtrainInf trains;//火车数据
     int num_of_train;//火车数量
+    int size;//当前表大小
 }TrainTableType;
 //此处再次给typedef定义（写明每个结构体的变量作用）
 
@@ -143,4 +148,8 @@ Status train_read_file(TrainTableType& train_table, const char* file_name);
 /*****************************************************/
 //此函数是简单地初始化火车表，参数为火车表的结构体
 //返回值：int类型，当为OK时初始化成功，当为OVERFLOW时初始化失败
-Status init_train_table(TrainTableType train_table)
+Status init_train_table(TrainTableType train_table);
+//此函数用于显示初始界面，暂无返回值和参数
+void LoadingFunction();
+void RegisterFunction();
+void welcoming();

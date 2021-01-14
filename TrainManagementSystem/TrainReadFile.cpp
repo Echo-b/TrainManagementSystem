@@ -1,6 +1,6 @@
-#include"HeadFile.h"
-//´Ëº¯ÊıÎª»ğ³µÎÄ¼şµÄ¶ÁÈ¡º¯Êı£¬µÚÒ»¸ö²ÎÊıÎª»ğ³µ±í£¬µÚ¶ş¸öÎªÎÄ¼şÃû
-//µ±·µ»ØOKÊ±±íÊ¾¶ÁÈ¡³É¹¦£¬·µ»ØERRORÊ±¶ÁÈ¡Ê§°Ü
+ï»¿#include"HeadFile.h"
+//æ­¤å‡½æ•°ä¸ºç«è½¦æ–‡ä»¶çš„è¯»å–å‡½æ•°ï¼Œç¬¬ä¸€ä¸ªå‚æ•°ä¸ºç«è½¦è¡¨ï¼Œç¬¬äºŒä¸ªä¸ºæ–‡ä»¶å
+//å½“è¿”å›OKæ—¶è¡¨ç¤ºè¯»å–æˆåŠŸï¼Œè¿”å›ERRORæ—¶è¯»å–å¤±è´¥
 Status train_read_file(TrainTableType &train_table,const char *file_name)
 {
 	FILE* fp;
@@ -17,7 +17,7 @@ Status train_read_file(TrainTableType &train_table,const char *file_name)
 		fscanf(fp, "%d", &train_table.trains[i].seat.special);
 		fscanf(fp, "%d", &train_table.trains[i].seat.first_class);
 		fscanf(fp, "%d", &train_table.trains[i].seat.second_class);
-		for (int j = 0; j < train_table.trains[i].stop_station_number; j++) {//Í£¿¿Õ¾Á´±íÊäÈë
+		for (int j = 0; j < train_table.trains[i].stop_station_number; j++) {//åœé ç«™é“¾è¡¨è¾“å…¥
 			PStopStation p_station_next;
 			PStopStation p_station_now;
 			p_station_next = (PStopStation)malloc(sizeof(StopStationType));
@@ -32,7 +32,7 @@ Status train_read_file(TrainTableType &train_table,const char *file_name)
 			}
 			p_station_now->next_station = p_station_next;
 			p_station_now = p_station_next;
-
+			//todoåŠ å…¥reallocå‡½æ•°ï¼Œé˜²æ­¢ç¬¬ä¸€æ¬¡è¶…è¿‡æœ€å¤§å®¹é‡
 		}
 		train_table.num_of_train++;
 

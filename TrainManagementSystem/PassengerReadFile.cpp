@@ -13,6 +13,7 @@ Status passenger_read_file(PassengerTableType &passenger_table, const char *file
 		fscanf(fp, "%s", passenger_table.passengers[i].emergency_contact_tel);
 		i++;
 		passenger_table.num_of_passenger++;
+		//todu加入realloc函数，防止输入时超过最大容量
 	}
 	fclose(fp);
 	return OK;

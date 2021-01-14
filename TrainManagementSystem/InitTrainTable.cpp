@@ -1,6 +1,6 @@
-#include"HeadFile.h"
-//´Ëº¯ÊıÊÇ¼òµ¥µØ³õÊ¼»¯»ğ³µ±í£¬²ÎÊıÎª»ğ³µ±íµÄ½á¹¹Ìå
-//·µ»ØÖµ£ºintÀàĞÍ£¬µ±ÎªOKÊ±³õÊ¼»¯³É¹¦£¬µ±ÎªOVERFLOWÊ±³õÊ¼»¯Ê§°Ü
+ï»¿#include"HeadFile.h"
+//æ­¤å‡½æ•°æ˜¯ç®€å•åœ°åˆå§‹åŒ–ç«è½¦è¡¨ï¼Œå‚æ•°ä¸ºç«è½¦è¡¨çš„ç»“æ„ä½“
+//è¿”å›å€¼ï¼šintç±»å‹ï¼Œå½“ä¸ºOKæ—¶åˆå§‹åŒ–æˆåŠŸï¼Œå½“ä¸ºOVERFLOWæ—¶åˆå§‹åŒ–å¤±è´¥
 Status init_train_table(TrainTableType &train_table)
 {
 	if(!(train_table.trains = (PtrainInf)malloc(sizeof(train_information) * MAXLENGTH)))return OVERFLOW;
