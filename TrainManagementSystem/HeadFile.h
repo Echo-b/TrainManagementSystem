@@ -115,8 +115,32 @@ typedef struct {
     Ppassenger passengers;//此处放所有乘客的数据
     int num_of_passenger;//乘客人数
 }PassengerTableType;
+/*******************************************************************/
+//火车表结构体
+typedef struct {
+    PtrainInf trains;//火车数据
+    int num_of_train;//火车数量
+}TrainTableType;
 //此处再次给typedef定义（写明每个结构体的变量作用）
 
 //此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数上方写）（不写打死你）
-//函数返回输入的两个时间差，前者为开始时间，后者为结束时间，返回类型为我们定义的时间类型，未对参数进行改变
+/*****************************************************/
+//函数返回输入的两个时间差，前者为开始时间，后者为结束时间，
+//返回类型为我们定义的时间类型，未对参数进行改变
 TimeType get_time_difference(TimeType start_time, TimeType end_time);
+/*****************************************************/
+//此函数用于从文件读取乘客信息，第一个函数为读取后所放的位置，第二个为文件名。
+//返回值当返回OK时成功，当返回值为ERROR时读取失败
+Status passenger_read_file(PassengerTableType& passenger_table, const char *file_name);
+/*****************************************************/
+//这个看起来超级简单的函数是用来初始化乘客表的函数
+//返回值：int类型，OK为成功，OVERFLOW为内存不足
+Status init_passenge_table(PassengerTableType& passenger_table);
+/*****************************************************/
+//此函数为火车文件的读取函数，第一个参数为火车表，第二个为文件名
+//当返回OK时表示读取成功，返回ERROR时读取失败
+Status train_read_file(TrainTableType& train_table, const char* file_name);
+/*****************************************************/
+//此函数是简单地初始化火车表，参数为火车表的结构体
+//返回值：int类型，当为OK时初始化成功，当为OVERFLOW时初始化失败
+Status init_train_table(TrainTableType train_table)
