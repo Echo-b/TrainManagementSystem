@@ -29,7 +29,7 @@
     <ClCompile Include="MainFunction.cpp">
       <Filter>源文件\DataStructure%28code%29</Filter>
     </ClCompile>
-    <ClCompile Include="WelcomingFunction.cpp">
+    <ClCompile Include="welcomingfunction.cpp">
       <Filter>源文件\DataStructure%28code%29</Filter>
     </ClCompile>
   </ItemGroup>
