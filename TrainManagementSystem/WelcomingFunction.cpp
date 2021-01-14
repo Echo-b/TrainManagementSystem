@@ -1,67 +1,67 @@
-#include "HeadFile.h"
+ï»¿#include "HeadFile.h"
 void LoadingFunction()
 {
     Name_Type user_name, user_password;
     IMAGE stu_loading;
-    loadimage(&stu_loading, _T("stu_loading.jpg")); //¼ÓÔØ±³¾°Í¼Æ¬
+    loadimage(&stu_loading, _T("stu_loading.jpg")); //åŠ è½½èƒŒæ™¯å›¾ç‰‡
     putimage(0, 0, &stu_loading);
-    InputBox(user_name, 20, _T("ÇëÊäÈëÓÃ»§Ãû"));
-    //Todo ¼ìË÷ÎÄ¼ş£¬²é¿´ÊÇ·ñ´æÔÚ´ËÓÃ»§£¬¶ÔÓ¦Êä³ö
+    InputBox(user_name, 20, _T("è¯·è¾“å…¥ç”¨æˆ·å"));
+    //Todo æ£€ç´¢æ–‡ä»¶ï¼ŒæŸ¥çœ‹æ˜¯å¦å­˜åœ¨æ­¤ç”¨æˆ·ï¼Œå¯¹åº”è¾“å‡º
     if (true)
     {
-        InputBox(user_password, 20, _T("ÇëÊäÈëÃÜÂë"));
-        //Todo ¼ìË÷ÎÄ¼ş£¬²é¿´´ËÓÃ»§¶ÔÓ¦µÄÃÜÂëÊÇ·ñÕıÈ·£¬¶ÔÓ¦¸ø³öÌáÊ¾
+        InputBox(user_password, 20, _T("è¯·è¾“å…¥å¯†ç "));
+        //Todo æ£€ç´¢æ–‡ä»¶ï¼ŒæŸ¥çœ‹æ­¤ç”¨æˆ·å¯¹åº”çš„å¯†ç æ˜¯å¦æ­£ç¡®ï¼Œå¯¹åº”ç»™å‡ºæç¤º
         if (true)
         {
-            //Todo ½øÈëÏµÍ³£¬¼´µ÷ÓÃÏàÓ¦µÄº¯Êı
+            //Todo è¿›å…¥ç³»ç»Ÿï¼Œå³è°ƒç”¨ç›¸åº”çš„å‡½æ•°
         }
     }
 }
 void RegisterFunction()
 {
     IMAGE stu_register;
-    loadimage(&stu_register, _T("stu_register.jpg")); //¼ÓÔØ±³¾°Í¼Æ¬
+    loadimage(&stu_register, _T("stu_register.jpg")); //åŠ è½½èƒŒæ™¯å›¾ç‰‡
     putimage(0, 0, &stu_register);
-    Name_Type register_name; //ÉùÃ÷Ò»¸öÁÙÊ±±äÁ¿ÓÃÓÚ½ÓÊÕÓÃ»§ÊäÈë£¬½øĞĞ×¢²á
+    Name_Type register_name; //å£°æ˜ä¸€ä¸ªä¸´æ—¶å˜é‡ç”¨äºæ¥æ”¶ç”¨æˆ·è¾“å…¥ï¼Œè¿›è¡Œæ³¨å†Œ
     Name_Type register_password;
-    FILE* fp; //ÓÃÓÚ´¢´æ×¢²áµÄÓÃ»§ĞÅÏ¢
-    InputBox(register_name, 20, _T("ÇëÊäÈëÓÃ»§Ãû"));
-    InputBox(register_password, 20, _T("ÇëÊäÈëÃÜÂë")); //Ö®ºó¿ÉÒÔÔö¼ÓÒ»¸öÃÜÂëÇ¿ÈõĞÔÅĞ¶Ï£¬²¢ÌáÊ¾ÓÃ»§ÊÇ·ñĞèÒª½øĞĞ¸ü¸Ä
-    fopen_s(&fp, "registerinformation.txt", "wt");     //Ğ´ÈëÎÄ¼şÖĞ
+    FILE* fp; //ç”¨äºå‚¨å­˜æ³¨å†Œçš„ç”¨æˆ·ä¿¡æ¯
+    InputBox(register_name, 20, _T("è¯·è¾“å…¥ç”¨æˆ·å"));
+    InputBox(register_password, 20, _T("è¯·è¾“å…¥å¯†ç ")); //ä¹‹åå¯ä»¥å¢åŠ ä¸€ä¸ªå¯†ç å¼ºå¼±æ€§åˆ¤æ–­ï¼Œå¹¶æç¤ºç”¨æˆ·æ˜¯å¦éœ€è¦è¿›è¡Œæ›´æ”¹
+    fopen_s(&fp, "registerinformation.txt", "wt");     //å†™å…¥æ–‡ä»¶ä¸­
     fwrite(&register_name, sizeof(register_name), 1, fp);
     fwrite(&register_password, sizeof(register_password), 1, fp);
 }
 void welcoming()
 {
     IMAGE welcome_images;
-    IMAGE loading_button, register_button; //µÇÂ¼ºÍ×¢²á°´Å¥
+    IMAGE loading_button, register_button; //ç™»å½•å’Œæ³¨å†ŒæŒ‰é’®
     loadimage(&welcome_images, _T("welcome_images"));
-    putimage(0, 0, &welcome_images); //ÏÔÊ¾»¶Ó­½çÃæ
-    //ÏÂÃæ¿ªÊ¼ÊÇ»ñÈ¡ÓÃ»§µÄÊó±êµã»÷²¢½øĞĞÏàÓ¦µÄÌø×ª
+    putimage(0, 0, &welcome_images); //æ˜¾ç¤ºæ¬¢è¿ç•Œé¢
+    //ä¸‹é¢å¼€å§‹æ˜¯è·å–ç”¨æˆ·çš„é¼ æ ‡ç‚¹å‡»å¹¶è¿›è¡Œç›¸åº”çš„è·³è½¬
     MOUSEMSG msg;
-    FlushMouseMsgBuffer(); //Çå¿ÕÖ®Ç°µÄÊó±êÏûÏ¢
+    FlushMouseMsgBuffer(); //æ¸…ç©ºä¹‹å‰çš„é¼ æ ‡æ¶ˆæ¯
     while (true)
     {
         while (MouseHit())
         {
-            msg = GetMouseMsg();          //»ñÈ¡Êó±êÏûÏ¢
-            if (msg.uMsg == WM_LBUTTONUP) //×ó¼ü°´ÏÂ
+            msg = GetMouseMsg();          //è·å–é¼ æ ‡æ¶ˆæ¯
+            if (msg.uMsg == WM_LBUTTONUP) //å·¦é”®æŒ‰ä¸‹
             {
-                //Todo ÅĞ¶ÏÊó±êµÄµã»÷·¶Î§£¬µÇÂ¼ÔòÌø×ªµÇÂ¼½çÃæ£¬·ñÔò½øÈë×¢²á½çÃæ
+                //Todo åˆ¤æ–­é¼ æ ‡çš„ç‚¹å‡»èŒƒå›´ï¼Œç™»å½•åˆ™è·³è½¬ç™»å½•ç•Œé¢ï¼Œå¦åˆ™è¿›å…¥æ³¨å†Œç•Œé¢
                 if (true)
                 {
-                    //»òÕß×¢²á°´Å¥ºÍµÇÂ¼°´Å¥Ò²¿ÉÒÔÖ±½ÓÓÃeasyxÖ±½Ó»­ÔÚÍ¼Æ¬ÉÏ
+                    //æˆ–è€…æ³¨å†ŒæŒ‰é’®å’Œç™»å½•æŒ‰é’®ä¹Ÿå¯ä»¥ç›´æ¥ç”¨easyxç›´æ¥ç”»åœ¨å›¾ç‰‡ä¸Š
                     loadimage(&loading_button, _T("picutre path"));
                     putimage(0, 0, &loading_button);
-                    Sleep(100);        //Ôö¼ÓÑÓÊ±£¬ÏÔÊ¾µã»÷Ğ§¹û£¬È»ºó¼ÓÔØÁíÍâµÄ½çÃæµÄÍ¼Æ¬
-                    LoadingFunction(); //½øÈëµÇÂ¼½çÃæ
+                    Sleep(100);        //å¢åŠ å»¶æ—¶ï¼Œæ˜¾ç¤ºç‚¹å‡»æ•ˆæœï¼Œç„¶ååŠ è½½å¦å¤–çš„ç•Œé¢çš„å›¾ç‰‡
+                    LoadingFunction(); //è¿›å…¥ç™»å½•ç•Œé¢
                 }
                 else
                 {
                     loadimage(&register_button, _T("picutre path"));
                     putimage(0, 0, &register_button);
-                    Sleep(100);         //Ôö¼ÓÑÓÊ±£¬ÏÔÊ¾µã»÷Ğ§¹û£¬È»ºó¼ÓÔØÁíÍâµÄ½çÃæµÄÍ¼Æ¬
-                    RegisterFunction(); //½øÈë×¢²á½çÃæ
+                    Sleep(100);         //å¢åŠ å»¶æ—¶ï¼Œæ˜¾ç¤ºç‚¹å‡»æ•ˆæœï¼Œç„¶ååŠ è½½å¦å¤–çš„ç•Œé¢çš„å›¾ç‰‡
+                    RegisterFunction(); //è¿›å…¥æ³¨å†Œç•Œé¢
                 }
             }
         }
