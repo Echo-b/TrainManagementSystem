@@ -148,12 +148,7 @@ Status train_read_file(TrainTableType &train_table, const char *file_name);
 /*****************************************************/
 //此函数是简单地初始化火车表，参数为火车表的结构体
 //返回值：int类型，当为OK时初始化成功，当为OVERFLOW时初始化失败
-<<<<<<< HEAD
 Status init_train_table(TrainTableType train_table);
     //此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数下方写）（不写打死你）
 void welcoming();
    //此函数是欢迎函数，不需要参数，无返回值
-=======
-Status init_train_table(TrainTableType train_table)
-    //此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数下方写）（不写打死你）
->>>>>>> master
