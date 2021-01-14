@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MainFunction.cpp" />
+    <ClCompile Include="WelcomingFunction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeadFile.h" />
