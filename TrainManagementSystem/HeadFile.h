@@ -19,6 +19,7 @@
 
 
 //此处给typedef的定义
+<<<<<<< Updated upstream
 typedef char Train_Name_Type[20];
 typedef char Name_Type[20];
 typedef char Place_Name_Type[20];
@@ -26,6 +27,14 @@ typedef char Phone_Number_Type[20];
 typedef char ID[30];
 typedef char Order_Number_Type[30];
 typedef int Status;
+=======
+typedef wchar_t Train_Name_Type[20];
+typedef wchar_t Name_Type[20];
+typedef wchar_t Place_Name_Type[20];
+typedef wchar_t Phone_Number_Type[20];
+typedef wchar_t ID[30];
+typedef wchar_t Order_Number_Type[30];
+>>>>>>> Stashed changes
 
 //此处定义结构体（注意结构体的顺序）（不要前面定义的用到后面才定义的）
 /*******************************************************************/
@@ -89,7 +98,16 @@ typedef struct train_information
     SeatNumberType seat;             //不同等级的座位号的数量
     PStopStation first_stop_station; //链接停靠站
     PStopStation frist_passenger;
+<<<<<<< Updated upstream
 }train_information,*PtrainInf;
+=======
+} TrainElemType;
+typedef struct train_node
+{
+    TrainElemType Data;
+    struct train_node *next;
+} * TrainLink;
+>>>>>>> Stashed changes
 /*******************************************************************/
 
 //车票
@@ -123,6 +141,7 @@ typedef struct {
 }TrainTableType;
 //此处再次给typedef定义（写明每个结构体的变量作用）
 
+<<<<<<< Updated upstream
 //此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数上方写）（不写打死你）
 /*****************************************************/
 //函数返回输入的两个时间差，前者为开始时间，后者为结束时间，
@@ -144,3 +163,13 @@ Status train_read_file(TrainTableType& train_table, const char* file_name);
 //此函数是简单地初始化火车表，参数为火车表的结构体
 //返回值：int类型，当为OK时初始化成功，当为OVERFLOW时初始化失败
 Status init_train_table(TrainTableType train_table)
+=======
+//此处给函数声明(注意说明函数功能，每个参数的作用，还有是否对参数动了手脚，返回值类型）（在函数下方写）（不写打死你）
+
+//欢迎函数，基本思路是加载一张图片，之后的鼠标点击的按钮由我们来摆放实现
+void welcoming();
+void SearchFunction();
+void search_train();
+void search_time();
+void search_station();
+>>>>>>> Stashed changes
