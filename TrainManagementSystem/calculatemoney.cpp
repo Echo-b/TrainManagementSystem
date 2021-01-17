@@ -1,12 +1,8 @@
 #include "HeadFile.h"
-float calculate_money(Place_Name_Type buy_startsta, Place_Name_Type buy_endsta, const char * buy_seat,Train_Name_Type choose_train)
+float calculate_money(TrainTableType &train_table ,Place_Name_Type buy_startsta, Place_Name_Type buy_endsta,const char * buy_seat,Train_Name_Type choose_train)
 {
-    TrainTableType train_table;
-    init_train_table(train_table);
-    train_read_file(train_table, "DataAndExample\\train.txt");
-   // TrainLink train_point;
     PStopStation stop_point;
-    float total_distance;//总里程
+    float total_distance=0;//总里程
     float total_price=0.0;//总价
     int i;
     for (i = 0; i < train_table.size;i++) {
