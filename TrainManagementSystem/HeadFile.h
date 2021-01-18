@@ -155,3 +155,6 @@ void welcoming();
 float calculate_money(Place_Name_Type buy_startsta, Place_Name_Type buy_endsta, wchar_t* buy_seat, Train_Name_Type choose_train);
 //此文件是用于计算高铁的票价，参数是乘客的四个输入，起始站，终到站，座位类型以及车次
 //返回一个浮点数，对传入的参数不做改动
+Status init_ticket_table(TicketTableType& ticket_table);
+//此文件用于读取订票文件
+Status ticket_read_file(TicketTableType& ticket_table, const char* file_name);
