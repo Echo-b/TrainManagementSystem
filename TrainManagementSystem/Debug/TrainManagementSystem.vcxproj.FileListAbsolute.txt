@@ -1,2 +1,0 @@
-C:\Users\Curitis\Desktop\TrainManagementSystem\TrainManagementSystem\TrainManagementSystem\Debug\TrainManagementSystem.exe
-C:\Users\Curitis\Desktop\TrainManagementSystem\TrainManagementSystem\TrainManagementSystem\Debug\TrainManagementSystem.pdb
